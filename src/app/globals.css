@@ -2,12 +2,35 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0f172a;
+
+  --primary: #2563eb;
+  --secondary: #10b981;
+  --destructive: #ef4444;
+
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+
+  /* Custom Light Variants */
+  --primary-light: #eef5fe;
+  --secondary-light: #d0ffbc;
+  --warning-foreground: #d97706;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-destructive: var(--destructive);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  /* Mapping new colors to utility classes */
+  --color-primary-light: var(--primary-light);
+  --color-secondary-light: var(--secondary-light);
+  --color-warning-foreground: var(--warning-foreground);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -16,11 +39,23 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+
+    --primary: #3b82f6;
+    --secondary: #34d399;
+    --destructive: #f87171;
+
+    --muted: #1e293b;
+    --muted-foreground: #94a3b8;
+
+    /* Dark mode inversions for light variants */
+    --primary-light: #172554; /* Deep Blue */
+    --secondary-light: #064e3b; /* Deep Green */
+    --warning-foreground: #fbbf24;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
