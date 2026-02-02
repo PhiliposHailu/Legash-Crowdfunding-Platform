@@ -4,11 +4,11 @@ import HowItWorksSection from "./HowItWorksSection";
 
 function LandingPage() {
   return (
-    <div className="space-y-7 px-30">
+    <>
       <HeroSecion />
       <CampaignsSection />
       <HowItWorksSection />
-    </div>
+    </>
   );
 }
 
