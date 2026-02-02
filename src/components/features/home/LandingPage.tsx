@@ -1,11 +1,11 @@
-import HeroSecion from "./HeroSection";
+import HeroSection from "./HeroSection";
 import CampaignsSection from "./CampaignSection";
 import HowItWorksSection from "./HowItWorksSection";
 
 function LandingPage() {
   return (
     <>
-      <HeroSecion />
+      <HeroSection />
       <CampaignsSection />
       <HowItWorksSection />
     </>

@@ -1,17 +1,19 @@
+"use client";
+
 import { useEffect, useState } from "react";
 
 function CampaignCard({
   raised = 2500,
   goal = 5000,
-  title = "medcine FOR CHILD",
-  category = "HEALTH",
+  title = "medicine for child",
+  category = "Health",
 }) {
-  const [fillWidth, setFillWidth] = useState(0)
+  const [fillWidth, setFillWidth] = useState(0);
   const progress = (raised / goal) * 100;
 
   useEffect(() => {
-    setFillWidth(progress)
-  }, []);
+    setFillWidth(progress);
+  }, [progress]);
 
   return (
     <div className="group w-80 bg-background rounded-3xl shadow-lg border border-muted overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5">
@@ -22,7 +24,6 @@ function CampaignCard({
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
 
-        {/* Category Tag  */}
         <div className="absolute top-3 right-3">
           <span className="bg-white/90 backdrop-blur-md text-primary text-[10px] font-bold px-3 py-1 rounded-lg shadow-sm border border-white/20 uppercase tracking-widest">
             {category}
@@ -39,7 +40,6 @@ function CampaignCard({
           need.
         </p>
 
-        {/* The Progress Bar */}
         <div className="space-y-2 pt-2">
           <div className="w-full h-2.5 bg-secondary-light rounded-full overflow-hidden">
             <div
@@ -50,11 +50,9 @@ function CampaignCard({
 
           <div className="flex justify-between text-xs font-bold uppercase tracking-tight">
             <span className="text-foreground">
-                {/* make it more human readable by adding comas  */}
-              ${raised.toLocaleString()}{" "} 
+              ${raised.toLocaleString()}{" "}
               <span className="text-muted-foreground font-normal">raised</span>
             </span>
-            {/* round our perecentage  */}
             <span className="text-primary">{progress.toFixed(0)}%</span>
           </div>
         </div>

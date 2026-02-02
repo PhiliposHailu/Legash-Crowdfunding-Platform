@@ -1,4 +1,5 @@
-"use client"
+"use client";
+
 import { useEffect, useState } from "react";
 
 function HeroCategoryCard() {
@@ -10,14 +11,11 @@ function HeroCategoryCard() {
 
   useEffect(() => {
     setOffset(circumference * (1 - progress));
-  }, []);
+  }, [circumference, progress]);
 
   return (
     <div className="relative flex items-center justify-center w-32 h-32">
-      <svg
-        className="absolute w-full h-full -rotate-90"
-        viewBox="0 0 128 128"
-      >
+      <svg className="absolute w-full h-full -rotate-90" viewBox="0 0 128 128">
         <circle
           cx="64"
           cy="64"
@@ -66,4 +64,4 @@ function HeroCategoryCard() {
   );
 }
 
-export default HeroCategoryCard
+export default HeroCategoryCard;
