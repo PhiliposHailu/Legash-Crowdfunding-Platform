@@ -1,5 +1,8 @@
 import Container from "@/components/shared/Container";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
+// IMPORT FROM NEW FEATURE
 import CategoryCard from "@/features/categories/components/CategoryCard";
 import { getCategories } from "@/features/categories/api/get-categories";
 
@@ -7,12 +10,20 @@ const CategoriesSection = async () => {
   const categories = await getCategories();
 
   return (
-    <section className="py-20 bg-background overflow-hidden">
+    <section className="py-24 bg-white overflow-hidden">
       <Container>
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-foreground font-sans">
-            Fundraising Categories
-          </h2>
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+          <div className="max-w-xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Explore Categories
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Find a cause that resonates with you, from medical needs to community projects.
+            </p>
+          </div>
+          <Button variant="outline" className="hidden md:flex gap-2">
+            View All Categories <ArrowRight className="w-4 h-4" />
+          </Button>
         </div>
 
         <div className="flex flex-wrap justify-center gap-6">
@@ -24,6 +35,11 @@ const CategoriesSection = async () => {
               <CategoryCard data={category} />
             </div>
           ))}
+        </div>
+        
+        {/* Mobile View All Button */}
+        <div className="mt-10 flex justify-center md:hidden">
+             <Button variant="outline" className="w-full">View All Categories</Button>
         </div>
       </Container>
     </section>

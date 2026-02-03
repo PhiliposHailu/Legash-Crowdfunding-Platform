@@ -30,7 +30,6 @@ import { Fundraiser } from "../types";
 export async function getCampaigns(): Promise<Fundraiser[]> {
   await new Promise((resolve) => setTimeout(resolve, 100));
 
-  // This data now PERFECTLY matches your C# model structure
   return [
     {
       id: 1,
@@ -97,6 +96,5 @@ export async function getCampaigns(): Promise<Fundraiser[]> {
       logoPath: "https://picsum.photos/400/300?random=2",
       category: { id: 2, name: "Education", description: "..." }
     },
-    // ... 
   ];
 }
