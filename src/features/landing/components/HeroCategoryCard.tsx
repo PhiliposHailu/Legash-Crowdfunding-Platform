@@ -1,5 +1,5 @@
 "use client";
-
+import SmartImage from "@/components/shared/SmartImage";
 import { useEffect, useState } from "react";
 
 interface HeroCardProps {
@@ -49,9 +49,11 @@ function HeroCategoryCard({ category, image }: HeroCardProps) {
       </svg>
 
       <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-background shadow-lg z-10">
-        <img
+        <SmartImage
           src={image}
           alt={category}
+          fill
+          containerClassName="w-full h-full"
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />
       </div>

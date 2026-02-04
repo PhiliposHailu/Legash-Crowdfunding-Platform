@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import Container from "@/components/shared/Container";
 import { cn } from "@/lib/utils";
