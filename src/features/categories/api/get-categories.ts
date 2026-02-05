@@ -26,15 +26,66 @@
 // }
 
 
-import { Category, CategoryStyle } from "../types";
+import { Category, CategoryStyle, CategoryDetail } from "../types";
+
+import { 
+  Stethoscope, 
+  GraduationCap, 
+  Flame, 
+  Heart, 
+  Users, 
+  Briefcase, 
+  Sprout,
+  HelpingHand 
+} from "lucide-react";
 
 const CATEGORY_STYLES: Record<string, CategoryStyle> = {
-  Medical: { icon: "➕", color: "bg-cyan-50" },
-  Religious: { icon: "🙏", color: "bg-indigo-50" },
-  Education: { icon: "📚", color: "bg-emerald-50" },
-  // I will add more styles if i need them later
-  Default: { icon: "📂", color: "bg-muted" },
+  Medical: { 
+    icon: Stethoscope, 
+    color: "bg-red-50", 
+    iconColor: "text-red-500" 
+  },
+  Religious: { 
+    icon: HelpingHand, 
+    color: "bg-indigo-50", 
+    iconColor: "text-indigo-500" 
+  },
+  Education: { 
+    icon: GraduationCap, 
+    color: "bg-blue-50", 
+    iconColor: "text-blue-500" 
+  },
+  Emergency: { 
+    icon: Flame, 
+    color: "bg-orange-50", 
+    iconColor: "text-orange-500" 
+  },
+  Community: { 
+    icon: Users, 
+    color: "bg-emerald-50", 
+    iconColor: "text-emerald-500" 
+  },
+  Business: { 
+    icon: Briefcase, 
+    color: "bg-zinc-100", 
+    iconColor: "text-zinc-600" 
+  },
+  Default: { 
+    icon: Heart, 
+    color: "bg-slate-50", 
+    iconColor: "text-slate-400" 
+  },
 };
+
+// const CATEGORY_STYLES: Record<string, CategoryStyle> = {
+//   Medical: { icon: "➕", color: "bg-cyan-50" },
+//   Religious: { icon: "🙏", color: "bg-indigo-50" },
+//   Education: { icon: "📚", color: "bg-emerald-50" },
+//   // I will add more styles if i need them later
+//   Default: { icon: "📂", color: "bg-muted" },
+// };
+
+
 
 export async function getCategories(): Promise<Category[]> {
   console.log("Using MOCK data for categories");
@@ -51,4 +102,30 @@ export async function getCategories(): Promise<Category[]> {
     ...category,
     ...CATEGORY_STYLES[category.name] || CATEGORY_STYLES.Default
   }));
+}
+
+
+export async function getCategoryById(id: string): Promise<CategoryDetail | null> {
+  const categories: CategoryDetail[] = [
+    {
+      id: 1,
+      name: "Medical",
+      tagline: "Health is the Foundation of Hope",
+      description: "Support families facing medical emergencies and help provide life-saving treatments to those in need across Ethiopia.",
+      icon: Stethoscope,
+      color: "bg-red-50",
+      image: "https://picsum.photos/200?random=4"
+    },
+    {
+      id: 2,
+      name: "Education",
+      tagline: "Fundraising for Student Success",
+      description: "Join us in breaking the cycle of poverty by funding school supplies, tuition, and classroom equipment for bright young minds.",
+      icon: GraduationCap,
+      color: "bg-blue-50",
+      image: "https://picsum.photos/200?random=5"
+    }
+  ];
+
+  return categories.find(c => c.id === parseInt(id)) || null;
 }

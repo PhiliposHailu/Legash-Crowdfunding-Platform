@@ -1,24 +1,35 @@
 import { cn } from "@/lib/utils";
 import { Category } from "../types";
 
-interface CategoryCardProps {
-  data: Category;
-}
+const CategoryCard = ({ data }: { data: Category }) => {
+  // Grab the icon component from our mapping
+  const IconComponent = data.icon;
 
-const CategoryCard = ({ data }: CategoryCardProps) => (
-  <div
-    className={cn(
-      "flex flex-col items-center justify-center p-6 rounded-[2rem] transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer min-w-[160px] aspect-[4/5]",
-      data.color 
-    )}
-  >
-    <div className="text-5xl mb-4 drop-shadow-md">
-      {data.icon}
+  return (
+    <div
+      className={cn(
+        "group flex flex-col items-center justify-center p-8 rounded-[2.5rem] transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl cursor-pointer min-w-[170px] aspect-[4/5] border border-transparent hover:border-white/50",
+        data.color
+      )}
+    >
+      {/* ICON CONTAINER */}
+      <div className={cn(
+        "w-16 h-16 rounded-2xl flex items-center justify-center mb-5 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-sm bg-white",
+        data.iconColor
+      )}>
+        {IconComponent && <IconComponent size={32} strokeWidth={2.5} />}
+      </div>
+
+      <div className="text-center space-y-1">
+        <h3 className="font-bold text-[#2d3a4b] text-base">
+          {data.name}
+        </h3>
+        <p className="text-[10px] text-muted-foreground uppercase tracking-[0.15em] font-medium">
+          {data.count || "0"} Projects
+        </p>
+      </div>
     </div>
-    <div className="text-center space-y-1">
-      <h3 className="font-bold text-foreground text-sm md:text-base">{data.name}</h3>
-    </div>
-  </div>
-);
+  );
+};
 
 export default CategoryCard;

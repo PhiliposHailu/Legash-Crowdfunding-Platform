@@ -2,7 +2,6 @@ import Container from "@/components/shared/Container";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
-// IMPORT FROM NEW FEATURE
 import CategoryCard from "@/features/categories/components/CategoryCard";
 import { getCategories } from "@/features/categories/api/get-categories";
 

@@ -10,13 +10,13 @@ import TrustSection from "./components/TrustSection";
 // This component composes the layout of the feature
 const LandingPage = () => {
   return (
-    <>
+    <div className="pt-7 bg-primary-light">
       <HeroSection />
       <CampaignsSection />
       <HowItWorksSection />
       <CategoriesSection />
       <TrustSection />
-    </>
+    </div>
   );
 };
 

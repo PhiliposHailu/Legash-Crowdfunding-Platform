@@ -10,13 +10,12 @@ function HeroSection() {
   return (
     <section className="relative w-full bg-primary-light overflow-hidden">
       <Container className="relative min-h-[550px] flex items-center justify-center py-12">
-        
         {HERO_CARDS.map((card, i) => (
           <div
             key={card.id}
             className={cn(
               "hidden lg:block absolute z-0 transition-transform duration-500 hover:scale-105",
-              HERO_POSITIONS[i]
+              HERO_POSITIONS[i],
             )}
           >
             <HeroCategoryCard category={card.category} image={card.image} />
@@ -26,7 +25,7 @@ function HeroSection() {
         <div
           className={cn(
             "relative z-10 flex flex-col items-center p-12 md:p-16 bg-white shadow-2xl border border-white/40 max-w-xl text-center gap-6",
-            "rounded-[100%_100%_50%_50%_/_100%_100%_100%_100%] animate-liquid"
+            "rounded-[100%_100%_50%_50%_/_100%_100%_100%_100%] animate-liquid",
           )}
         >
           <div className="px-3 py-1 bg-secondary-light rounded-full border border-secondary/20">
@@ -37,7 +36,8 @@ function HeroSection() {
 
           <div className="space-y-3">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground leading-tight tracking-tight">
-              Successful fundraisers <br />
+              <span className="block">Stronger</span>
+              <span className="block">together</span>
               <span className="text-primary">start here</span>
             </h1>
             <p className="text-muted-foreground text-base max-w-sm mx-auto leading-relaxed">
