@@ -1,8 +1,8 @@
 import { cn } from "@/lib/utils";
 import { Category } from "../types";
+import Link from "next/link";
 
 const CategoryCard = ({ data }: { data: Category }) => {
-  // Grab the icon component from our mapping
   const IconComponent = data.icon;
 
   return (

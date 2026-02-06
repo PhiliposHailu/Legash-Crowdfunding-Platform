@@ -21,7 +21,7 @@ export default function SmartImage({
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
-    <div className={cn("relative overflow-hidden bg-muted", containerClassName)}>
+    <div className={cn("relative overflow-hidden bg-muted w-full h-full", containerClassName)}>
       
       {!isLoaded && (
         <Skeleton 

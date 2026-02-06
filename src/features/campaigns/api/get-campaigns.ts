@@ -24,7 +24,6 @@
 // }
 
 
-// src/features/campaigns/api/get-campaigns.ts
 import { Fundraiser } from "../types";
 
 export async function getCampaigns(): Promise<Fundraiser[]> {
@@ -97,4 +96,46 @@ export async function getCampaigns(): Promise<Fundraiser[]> {
       category: { id: 2, name: "Education", description: "..." }
     },
   ];
+}
+
+
+
+
+// The fundraiser entity needs to be understood first before we can implement the getCampaignsByCategory function using a real api.
+
+export interface FundraiserResponse {
+  data: Fundraiser[];
+  total: number;
+}
+
+export async function getCampaignsByCategory(
+  categoryId: string, 
+  page: number = 1, 
+  limit: number = 12
+): Promise<FundraiserResponse> {
+  await new Promise((resolve) => setTimeout(resolve, 500));
+
+  const allCampaigns: Fundraiser[] = Array.from({ length: 48 }).map((_, i) => ({
+    id: i + 1,
+    name: `Support Project #${i + 1}`,
+    description: "This is a detailed description of the fundraiser campaign.",
+    code: `CAM-00${i}`, 
+    percentage: Math.floor(Math.random() * 100),
+    createdDate: new Date().toISOString(), 
+    categoryId: parseInt(categoryId),
+    logoPath: `https://picsum.photos/400/300?random=${i}`,
+    category: { 
+        id: parseInt(categoryId), 
+        name: "Selected Category", 
+        description: "Category description here" 
+    }
+  }));
+
+  const start = (page - 1) * limit;
+  const end = start + limit;
+
+  return {
+    data: allCampaigns.slice(start, end),
+    total: allCampaigns.length
+  };
 }

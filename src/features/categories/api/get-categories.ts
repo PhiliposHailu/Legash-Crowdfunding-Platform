@@ -77,23 +77,15 @@ const CATEGORY_STYLES: Record<string, CategoryStyle> = {
   },
 };
 
-// const CATEGORY_STYLES: Record<string, CategoryStyle> = {
-//   Medical: { icon: "➕", color: "bg-cyan-50" },
-//   Religious: { icon: "🙏", color: "bg-indigo-50" },
-//   Education: { icon: "📚", color: "bg-emerald-50" },
-//   // I will add more styles if i need them later
-//   Default: { icon: "📂", color: "bg-muted" },
-// };
-
-
 
 export async function getCategories(): Promise<Category[]> {
   console.log("Using MOCK data for categories");
   
   const mockApiData: Category[] = [
+    { id: 0, name: "All" },
     { id: 1, name: "Medical" },
-    { id: 2, name: "Religious" },
-    { id: 3, name: "Education" },
+    { id: 2, name: "Education" },
+    { id: 3, name: "Religious" },
     { id: 4, name: "Family" },
     { id: 5, name: "Animals" },
   ];
@@ -107,6 +99,15 @@ export async function getCategories(): Promise<Category[]> {
 
 export async function getCategoryById(id: string): Promise<CategoryDetail | null> {
   const categories: CategoryDetail[] = [
+    {
+      id: 0,
+      name: "All",
+      tagline: "Discovery Awaits in Every Cause",
+      description: "Explore a world of impact with Legash's diverse fundraising categories. From urgent medical needs to inspiring educational projects, find the cause that resonates with your heart and start making a difference today.",
+      icon: Stethoscope,
+      color: "bg-red-50",
+      image: "https://picsum.photos/200?random=4"
+    },
     {
       id: 1,
       name: "Medical",

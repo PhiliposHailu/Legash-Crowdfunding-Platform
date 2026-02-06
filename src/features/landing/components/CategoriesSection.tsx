@@ -1,6 +1,7 @@
 import Container from "@/components/shared/Container";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 import CategoryCard from "@/features/categories/components/CategoryCard";
 import { getCategories } from "@/features/categories/api/get-categories";
@@ -27,18 +28,20 @@ const CategoriesSection = async () => {
 
         <div className="flex flex-wrap justify-center gap-6">
           {categories.map((category) => (
-            <div
+            <Link
               key={category.id}
               className="flex-none w-[calc(50%-1.5rem)] sm:w-[calc(33.33%-1.5rem)] md:w-[calc(25%-1.5rem)] lg:w-[calc(20%-1.5rem)]"
+              href={`/categories/${category.id}`}
             >
               <CategoryCard data={category} />
-            </div>
+            </Link>
           ))}
         </div>
         
-        {/* Mobile View All Button */}
         <div className="mt-10 flex justify-center md:hidden">
-             <Button variant="outline" className="w-full">View All Categories</Button>
+             <Button asChild variant="outline" className="w-full">
+              <Link href="/categories/0">View All Categories</Link>
+             </Button>
         </div>
       </Container>
     </section>

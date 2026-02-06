@@ -4,8 +4,8 @@ export interface Fundraiser {
   description: string;
   code: string;
   percentage: number; 
-  createdDate: string; 
-  categoryId: number;
+  createdDate?: string; 
+  categoryId?: number;
   logoPath: string; 
   category?: Category;
 }
@@ -15,6 +15,8 @@ export interface Category {
   name: string;
   description: string;
 }
+
+
 
 // Note: just in case i need this two in the future ,not currently used
 // export interface FundraiserImage {

@@ -1,7 +1,8 @@
 // src/app/categories/[id]/page.tsx
+import Container from "@/components/shared/Container";
+import CampaignGrid from "@/features/campaigns/components/CampaignGrid";
 import { getCategoryById } from "@/features/categories/api/get-categories";
 import CategoryHero from "@/features/categories/components/CategoryHeor";
-import CampaignsSection from "@/features/landing/components/CampaignsSection";
 import { notFound } from "next/navigation";
 
 // 1. Update the type to Promise<{ id: string }>
@@ -25,9 +26,11 @@ export default async function CategoryPage({
   return (
     <main className="min-h-screen">
       <CategoryHero category={category} />
-      <div className="py-20">
-         <CampaignsSection />
-      </div>
+      <section className="py-24 bg-background">
+        <Container>
+           <CampaignGrid categoryId={id} />
+        </Container>
+      </section>
     </main>
   );
 }
