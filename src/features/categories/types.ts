@@ -7,7 +7,7 @@ export interface Category {
   description?: string;
 
   // Ui-specific properties
-  icon?: LucideIcon;
+  icon?: LucideIcon | string;
   color?: string;
   iconColor?: string;
   count?: number;
@@ -24,7 +24,7 @@ export interface CategoryDetail {
 }
 
 export interface CategoryStyle {
-  icon: LucideIcon;
+  icon: LucideIcon | string;
   color: string;
   iconColor: string;
 }

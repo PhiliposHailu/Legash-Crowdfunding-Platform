@@ -18,11 +18,13 @@ const CategoriesSection = async () => {
               Explore Categories
             </h2>
             <p className="text-muted-foreground text-lg">
-              Find a cause that resonates with you, from medical needs to community projects.
+              Find a cause that resonates with you, from medical needs to
+              community projects.
             </p>
           </div>
           <Button variant="outline" className="hidden md:flex gap-2">
-            View All Categories <ArrowRight className="w-4 h-4" />
+            <Link href="/categories/0">View All Categories</Link>{" "}
+            <ArrowRight className="w-4 h-4" />
           </Button>
         </div>
 
@@ -37,11 +39,11 @@ const CategoriesSection = async () => {
             </Link>
           ))}
         </div>
-        
+
         <div className="mt-10 flex justify-center md:hidden">
-             <Button asChild variant="outline" className="w-full">
-              <Link href="/categories/0">View All Categories</Link>
-             </Button>
+          <Button asChild variant="outline" className="w-full">
+            <Link href="/categories/0">View All Categories</Link>
+          </Button>
         </div>
       </Container>
     </section>

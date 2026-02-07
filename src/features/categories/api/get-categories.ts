@@ -41,7 +41,7 @@ import {
 
 const CATEGORY_STYLES: Record<string, CategoryStyle> = {
   Medical: { 
-    icon: Stethoscope, 
+    icon: "/family.webp", 
     color: "bg-red-50", 
     iconColor: "text-red-500" 
   },
@@ -104,9 +104,9 @@ export async function getCategoryById(id: string): Promise<CategoryDetail | null
       name: "All",
       tagline: "Discovery Awaits in Every Cause",
       description: "Explore a world of impact with Legash's diverse fundraising categories. From urgent medical needs to inspiring educational projects, find the cause that resonates with your heart and start making a difference today.",
-      icon: Stethoscope,
-      color: "bg-red-50",
-      image: "https://picsum.photos/200?random=4"
+      icon: Sprout,
+      color: "bg-green-50",
+      image: "https://picsum.photos/200?random=3"
     },
     {
       id: 1,
