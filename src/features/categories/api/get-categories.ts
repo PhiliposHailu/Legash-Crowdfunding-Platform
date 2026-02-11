@@ -41,37 +41,47 @@ import {
 
 const CATEGORY_STYLES: Record<string, CategoryStyle> = {
   Medical: { 
-    icon: "/family.webp", 
+    icon: "/category/medicine.webp", 
     color: "bg-red-50", 
     iconColor: "text-red-500" 
   },
   Religious: { 
-    icon: HelpingHand, 
+    icon: "/category/religious.webp", 
     color: "bg-indigo-50", 
     iconColor: "text-indigo-500" 
   },
   Education: { 
-    icon: GraduationCap, 
+    icon: "/category/education.webp", 
     color: "bg-blue-50", 
     iconColor: "text-blue-500" 
   },
   Emergency: { 
-    icon: Flame, 
+    icon: "/category/emergency.webp", 
     color: "bg-orange-50", 
     iconColor: "text-orange-500" 
   },
   Community: { 
-    icon: Users, 
+    icon: "/category/family.webp", 
     color: "bg-emerald-50", 
     iconColor: "text-emerald-500" 
   },
   Business: { 
-    icon: Briefcase, 
+    icon: "/category/business.webp", 
     color: "bg-zinc-100", 
     iconColor: "text-zinc-600" 
   },
+   Animals: { 
+    icon: "/category/animals.webp", 
+    color: "bg-zinc-100", 
+    iconColor: "text-zinc-600" 
+  },
+  Family: { 
+    icon: "/category/family.webp", 
+    color: "bg-indigo-50", 
+    iconColor: "text-indigo-500" 
+  },
   Default: { 
-    icon: Heart, 
+    icon: "/category/default.webp", 
     color: "bg-slate-50", 
     iconColor: "text-slate-400" 
   },
@@ -88,6 +98,7 @@ export async function getCategories(): Promise<Category[]> {
     { id: 3, name: "Religious" },
     { id: 4, name: "Family" },
     { id: 5, name: "Animals" },
+    { id: 6, name: "Business" },
   ];
   
   return mockApiData.map(category => ({

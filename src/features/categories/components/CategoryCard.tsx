@@ -20,7 +20,7 @@ const CategoryCard = ({ data }: { data: Category }) => {
         )}
       >
         {typeof IconComponent === "string" ? (
-          <img src={IconComponent} alt={data.name} className={cn("w-8 h-8", data.color)} />
+          <img src={IconComponent} alt={data.name} className={cn("w-32 h-20", data.color)} />
         ) : (
           IconComponent && <IconComponent size={32} strokeWidth={2.5} />
         )}
