@@ -3,10 +3,16 @@
 import { useEffect, useState } from "react";
 
 function CampaignCard({
-  raised = 2500,
-  goal = 5000,
-  title = "medicine for child",
-  category = "Health",
+  raised,
+  goal,
+  title,
+  category,
+}: {
+  raised: number;
+  goal: number;
+  titile: string;
+  title: string;
+  category: string;
 }) {
   const [fillWidth, setFillWidth] = useState(0);
   const progress = (raised / goal) * 100;
