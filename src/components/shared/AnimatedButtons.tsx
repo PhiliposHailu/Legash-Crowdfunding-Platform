@@ -1,11 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
+interface prop {
+  children: string;
+  stiffness: number;
+  damping: number;
+}
 
-function AnimatedButtons ({
-  children = "Click Me",
-  stiffness = 300,
-  damping = 15,
-}) {
+function AnimatedButtons({ children, stiffness, damping }: prop) {
   return (
     <motion.button
       whileHover={{ scale: 1.05, y: -2 }}
@@ -16,6 +17,6 @@ function AnimatedButtons ({
       {children}
     </motion.button>
   );
-};
+}
 
 export default AnimatedButtons;
