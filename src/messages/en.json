@@ -1,0 +1,13 @@
+{
+  "Common": {
+    "login": "Login",
+    "register": "Start Fundraising",
+    "footer_rights": "All rights reserved."
+  },
+  "Landing": {
+    "Hero": {
+      "title": "Successful fundraisers start here",
+      "subtitle": "Legash is the simplest way to raise money."
+    }
+  }
+}
