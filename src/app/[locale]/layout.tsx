@@ -45,9 +45,9 @@ export default async function LocaleLayout({
       className={locale === 'am' ? 'font-amharic' : 'font-english'}
       >
         <NextIntlClientProvider messages={messages}>
-          {/* <Navbar /> */}
+          <Navbar />
           {children}
-          {/* <Footer /> */}
+          <Footer />
           <Toaster richColors position="top-right" />
         </NextIntlClientProvider>
       </body>
